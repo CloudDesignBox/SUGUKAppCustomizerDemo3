@@ -188,3 +188,5 @@ export default class Sugukdemo3ApplicationCustomizer
 }
 //example test url
 // https://clouddesignboxlimited.sharepoint.com/sites/Communication/SitePages/Home.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"b4143eed-c20e-4868-80ce-db73dcba6722":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
+//
+// There must be an announcement list on the site for this to work unless you hardcode URL in REST call
