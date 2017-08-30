@@ -1,5 +1,6 @@
 import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
+//import placeholder methods
 import {
   BaseApplicationCustomizer,
   PlaceholderContent,
@@ -13,10 +14,11 @@ import {
 
 import * as strings from 'Sugukdemo3ApplicationCustomizerStrings';
 
-import 'jquery';
+//load jquery with jquery cycle as dependancy
+import * as jQuery from 'jquery';
+require('jquery-cycle');  
 
-require('cycle');
-
+//import our styles
 import styles from './styles.module.scss';
 
 const LOG_SOURCE: string = 'Sugukdemo3ApplicationCustomizer';
@@ -52,10 +54,14 @@ export default class Sugukdemo3ApplicationCustomizer
           return response.json();
         });
     }
-    //render method for announcement list
+    // ----------------------------------------------
+    // ----------------------------------------------
+    // render method for announcement list
+    // ----------------------------------------------
+    // ----------------------------------------------
     private _renderList(items: ISPList[]): void {
-      //html
-      let tempHTML: string = `<div class="cycle-slideshow" 
+      //html string
+      let tempHTML: string = `<div class="${styles.cycle_slideshow}" 
       data-cycle-fx="scrollHorz" 
       data-cycle-timeout="2000"
       data-cycle-slides="> div"
@@ -67,8 +73,18 @@ export default class Sugukdemo3ApplicationCustomizer
       tempHTML+=`</div>`;
       //output html
       document.getElementById(styles.sugukscrolling).innerHTML = tempHTML;
+      //load slideshow
+      jQuery( document ).ready(function() {
+        jQuery( "." + styles.cycle_slideshow).cycle();
+      });
     }
+    // ----------------------------------------------
+    // ----------------------------------------------
+    // end of render method for announcement list
+    // ----------------------------------------------
+    // ----------------------------------------------
 
+    //header placeholder
     private _headerPlaceholder: PlaceholderContent | undefined;
 
   @override
@@ -116,11 +132,7 @@ export default class Sugukdemo3ApplicationCustomizer
 
     return Promise.resolve<void>();
   }
-  // ----------------------------------------------
-  // ----------------------------------------------
-  // Header
-  // ----------------------------------------------
-  // ----------------------------------------------
+ 
   private _renderPlaceHolders(): void {
     console.log('Available placeholders: ',
     this.context.placeholderProvider.placeholderNames.map(name => PlaceholderName[name]).join(', '));
@@ -134,13 +146,14 @@ export default class Sugukdemo3ApplicationCustomizer
           });
           this._headerPlaceholder.domElement.innerHTML = `
           <div class="${styles.myheader}" id="${styles.myheader}">
-            <div class="${styles.date}" id="${styles.date}">
-            </div>
-            <div  class="${styles.suguknewstitle}">
-              SUGUK Latest News: 
+            <div  class="${styles.suguknewsleftpanel}">
+              <div class="${styles.date}" id="${styles.date}">
+              </div>
+              <div class="${styles.newstitle}"">
+              SUGUK Latest News:
+              </div>
             </div>
             <div  class="${styles.sugukscrolling}" id="${styles.sugukscrolling}">
-            
             </div>
           </div>
           `;
@@ -149,17 +162,14 @@ export default class Sugukdemo3ApplicationCustomizer
     //render date and time
     this.startTime();
 
-    //get list data for header
-    //populate menu
+    //get list data for header and then render
     this._getListData()
     .then((response) => {
       this._renderList(response.value);
     });
-
-
   }
 
-
+  //function to set time and date in header
   private async startTime() {
       var monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
@@ -175,11 +185,6 @@ export default class Sugukdemo3ApplicationCustomizer
       document.getElementById(styles.date).innerHTML = day + " " + month + " " + year + " " + h + ":" + m;
 }
 
-  // ----------------------------------------------
-  // ----------------------------------------------
-  // End of Header
-  // ----------------------------------------------
-  // ----------------------------------------------
 }
-
+//example test url
 // https://clouddesignboxlimited.sharepoint.com/sites/Communication/SitePages/Home.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"b4143eed-c20e-4868-80ce-db73dcba6722":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}

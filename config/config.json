@@ -13,15 +13,15 @@
   },
   "externals": {
     "jquery": {
-      "path": "https://code.jquery.com/jquery-2.2.4.min.js",
+      "path": "https://code.jquery.com/jquery-2.1.1.min.js",
       "globalName": "jQuery"
     },
-    "cycle": {
+    "jquery-cycle": {
       "path": "https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js",
       "globalName": "jQuery",
-      "globalDependencies": [ "jquery" ]
+      "globalDependencies": ["jquery"]
     }
-  },
+    },
   "localizedResources": {
     "Sugukdemo3ApplicationCustomizerStrings": "lib/extensions/sugukdemo3/loc/{locale}.js"
   }

@@ -16,7 +16,6 @@
     "@microsoft/sp-listview-extensibility": "1.2.0",
     "@microsoft/sp-webpart-base": "~1.2.0",
     "@types/jquery": "^2.0.48",
-    "@types/jquery.cycle2": "^2.1.2",
     "@types/webpack-env": ">=1.12.1 <1.14.0"
   },
   "devDependencies": {

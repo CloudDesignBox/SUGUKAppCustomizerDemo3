@@ -1,18 +1,39 @@
 .myheader{
     display: block;
     background-color:#151515;
-    padding:10px;
     border-top: 1px solid #fff;
     color: #fff;
+
+    .suguknewsleftpanel{
+        display: block;
+        padding-left:20px;
+        float: left;
+        width: 350px;
+        
+    }
     .date{
         display: inline-block;
+        width:150px;
+        padding:10px;
     }
-    .suguknewstitle{
-        display: inline-block;
+    .newstitle{
+        padding:10px;
         padding-left:20px;
+        padding-right:20px;
+        background-color: #071c5a;
+        display: inline-block;
     }
     .sugukscrolling{
-        display: inline-block;
-        padding-left:20px;
+        display: block;
+        overflow: hidden;
+        padding:10px;
+    }
+    .cycle_slideshow{
+        display:block;
+        width:100%;
+    }
+    .cycle_slideshow div{
+        display:block;
+        width:100%;
     }
 }
