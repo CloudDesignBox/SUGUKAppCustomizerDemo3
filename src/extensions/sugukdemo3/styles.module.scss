@@ -1,0 +1,18 @@
+.myheader{
+    display: block;
+    background-color:#151515;
+    padding:10px;
+    border-top: 1px solid #fff;
+    color: #fff;
+    .date{
+        display: inline-block;
+    }
+    .suguknewstitle{
+        display: inline-block;
+        padding-left:20px;
+    }
+    .sugukscrolling{
+        display: inline-block;
+        padding-left:20px;
+    }
+}

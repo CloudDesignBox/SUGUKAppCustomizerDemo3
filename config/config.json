@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "sugukdemo-3-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/sugukdemo3/Sugukdemo3ApplicationCustomizer.js",
+          "manifest": "./src/extensions/sugukdemo3/Sugukdemo3ApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    "jquery": {
+      "path": "https://code.jquery.com/jquery-2.2.4.min.js",
+      "globalName": "jQuery"
+    },
+    "cycle": {
+      "path": "https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.min.js",
+      "globalName": "jQuery",
+      "globalDependencies": [ "jquery" ]
+    }
+  },
+  "localizedResources": {
+    "Sugukdemo3ApplicationCustomizerStrings": "lib/extensions/sugukdemo3/loc/{locale}.js"
+  }
+}

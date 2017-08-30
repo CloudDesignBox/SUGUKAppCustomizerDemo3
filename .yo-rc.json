@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.2.0",
+    "libraryName": "sugukdemo-3",
+    "libraryId": "4286beaa-6bda-4707-a1d6-ee03dd3a3fc7",
+    "environment": "spo"
+  }
+}

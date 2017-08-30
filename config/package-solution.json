@@ -1,0 +1,12 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sugukdemo-3-client-side-solution",
+    "id": "4286beaa-6bda-4707-a1d6-ee03dd3a3fc7",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false
+  },
+  "paths": {
+    "zippedPackage": "solution/sugukdemo-3.sppkg"
+  }
+}
