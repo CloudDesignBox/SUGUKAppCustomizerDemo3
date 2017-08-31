@@ -9,6 +9,7 @@
     "**/lib-amd": true,
     "src/**/*.scss.ts": true
   },
+  "window.zoomLevel":1.8,
   "typescript.tsdk": ".\\node_modules\\typescript\\lib",
   "json.schemas": [
     {
