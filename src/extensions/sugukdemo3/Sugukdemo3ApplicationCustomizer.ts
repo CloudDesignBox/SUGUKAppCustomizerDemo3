@@ -175,14 +175,14 @@ export default class Sugukdemo3ApplicationCustomizer
         "July", "August", "September", "October", "November", "December"
       ];
       var today = new Date();
-      var day = today.getDay();
+      var day = today.getDate();
       var month = monthNames[today.getMonth()];
       var year = today.getFullYear();
       var h = today.getHours();
       var m = today.getMinutes();
-      let mins :string = "";
+      let mins :string = m.toString();
       if (m < 10) {mins = "0" + m.toString();}
-      document.getElementById(styles.date).innerHTML = day + " " + month + " " + year + " " + h + ":" + m;
+      document.getElementById(styles.date).innerHTML = day.toString() + " " + month + " " + year + " " + h + ":" + mins;
 }
 
 }
