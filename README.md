@@ -16,6 +16,7 @@ This is a demo of application customizers for SUGUK Leeds. In this example, we:
 ```bash
 git clone the repo
 npm install
+# Ensure announcement list exists on your developer site
 gulp serve
 ```
 
